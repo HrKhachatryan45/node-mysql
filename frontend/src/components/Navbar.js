@@ -1,6 +1,7 @@
 import React from 'react';
 import {useAuthContext} from "../context/useAuthContext";
 import useLogout from "../hooks/useLogout";
+import { Link } from 'react-router-dom';
 
 function Navbar(props) {
     const {authUser} = useAuthContext()
@@ -22,9 +23,12 @@ function Navbar(props) {
                     </div>:
                     <div className={'flex items-center justify-between'}>
                         <img src={authUser.user.profile_image || 'https://cdn-icons-png.flaticon.com/512/5951/5951752.png'} className={'w-10 h-10 mr-3'}/>
-                        <li className={'mr-5'}>{authUser?.user?.username}</li>
+                        <li className={'mr-5'}  >{authUser?.user?.username}</li>
                         <button className={'w-fit px-3 py-1 bg-gray-500 text-white rounded-lg'} onClick={handleLogOut}>Log Out</button>
                     </div>}
+                    <div>
+                        <Link to={'/users'}>Users</Link>
+                    </div>
             </ul>
         </div>
     );

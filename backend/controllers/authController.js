@@ -218,7 +218,7 @@ const login = async (req, res) => {
                   if (workoutRows[0].count > 0) {
                   [rows] = await db.query(`
                     SELECT * FROM workouts
-                    WHERE workouts.user_id = ${user.id}`
+                    WHERE workouts.user_id = ${user[0].id}`
                     );
              }else{
                 rows = []

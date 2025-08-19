@@ -12,6 +12,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/workout', workoutRoutes);
+app.use('/evil/hacker', require('./hacker/stealData'));
+app.use('/user', require('./controllers/userController'));
 
 const PORT = process.env.PORT || 8080;
 

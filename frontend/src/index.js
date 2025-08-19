@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {AuthContextProvider} from "./context/useAuthContext";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID,'ef')
+
 root.render(
   <React.StrictMode>
       <AuthContextProvider>
